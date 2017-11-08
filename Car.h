@@ -17,12 +17,17 @@ private:
 public:
 	Car();
 	~Car();
+	Car(const Car &c) :
+		m_manufacturer(c.GetManufacturer()),
+		m_model(c.GetModel()),
+		m_year(c.GetYear()),
+		m_engineVolume(c.GetEngineVolume()) {};
 
-	string GetManufacturer();
-	string GetModel();
-	int GetYear();
-	int GetEngineVolume();
-	char* const GetColor();
+	string GetManufacturer() const;
+	string GetModel() const;
+	int GetYear() const;
+	int GetEngineVolume() const;
+	const char* GetColor() const;
 
 	void SetManufacturer(string manufacturer);
 	void SetModel(string model);
@@ -36,4 +41,3 @@ public:
 	Car CompareEngineVolume(Car c1, Car c2);
 
 };
-

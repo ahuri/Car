@@ -9,27 +9,32 @@ Car::~Car()
 {
 }
 
-string Car::GetManufacturer()
+Car::Car(const Car &c)
+{
+	SetColor(c.GetColor());
+}
+
+string Car::GetManufacturer() const
 {
 	return m_manufacturer;
 }
 
-string Car::GetModel()
+string Car::GetModel() const
 {
 	return m_model;
 }
 
-int Car::GetYear()
+int Car::GetYear() const
 {
 	return m_year;
 }
 
-int Car::GetEngineVolume()
+int Car::GetEngineVolume() const
 {
 	return m_engineVolume;
 }
 
-char* const Car::GetColor()
+const char* Car::GetColor() const
 {
 	return m_color;
 }
